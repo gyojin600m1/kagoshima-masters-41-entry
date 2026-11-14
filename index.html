@@ -93,21 +93,6 @@ body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP','Mei
 </style>
 </head>
 <body>
-<div id="overlay">
-  <div id="overlay-box">
-    <h2>📱 このアプリの開き方</h2>
-    <ol>
-      <li>LINEでHTMLファイルをタップ</li>
-      <li>「共有」ボタン（□↑）をタップ</li>
-      <li>共有メニューから「<strong>Claude</strong>」を選択</li>
-      <li>Claudeアプリでアプリが起動 ✅</li>
-    </ol>
-    <div class="note">📌 Androidの場合：「他のアプリで開く」→「Claude」を選択<br>※ Claudeアプリが必要です（無料）</div>
-    <a class="store-btn" href="https://apps.apple.com/jp/app/claude-by-anthropic/id6473753684" target="_blank">📲 App Storeでダウンロード（無料）</a>
-    <button class="close-btn" onclick="closeOverlay()">✅ 使い方を確認しました</button>
-  </div>
-</div>
-
 <div class="header">
   <div class="header-top">
     <div class="header-icon">🏊</div>
@@ -338,8 +323,6 @@ function quickSearch(team,chipEl){
 }
 document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
 document.getElementById('searchInput').addEventListener('input',()=>{document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));});
-function closeOverlay(){try{localStorage.setItem('guide_shown','1');}catch(e){}document.getElementById('overlay').style.display='none';}
-try{if(localStorage.getItem('guide_shown'))document.getElementById('overlay').style.display='none';}catch(e){}
 </script>
 </body>
 </html>
